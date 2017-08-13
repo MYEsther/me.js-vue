@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>me文档-组件--progress</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Generate your documentation.">
+  <script src="https://static.mejinrong.com/MeAssest/MeJS2.0/me.js"></script>
+  
+  <script src="../api_files/bootstrap.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="../api_files/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../api_files/bootstrap-responsive.min.css">
+  <link rel="stylesheet" type="text/css" href="../api_files/base.css">
+  <link rel="stylesheet" type="text/css" href="https://static.mejinrong.com/MeAssest/MeJS2.0/me.css">
+
+
+  <style>
+    #vertical,#horizontal,#inline{
+      margin:30px 0;
+    }
+    .menu-submenu-horizontal:hover{
+      background: #fff !important;
+    }
+	section{
+		padding-top:13px;
+	}
+	.h-title{border-bottom:1px solid #f1f1f1}
+	.h-title ul{float:right; font-size:16px;font-weight:100;list-style: none; padding-top:15px;}
+	.h-title ul li{float:left;margin:0 5px;padding-right:10px; border-right:1px solid #f1f1f1;}
+	.h-title-4{padding:20px 0 0 0;}
+	p{line-height:24px;}
+	b{
+	color:#ff0000; font-weight:900;
+	}
+.docs-pictures,.docs-pictures1 {
+    width: 500px;
+    height: 100%;
+    margin: 0 auto;
+  }
+  ul{
+    list-style-type: none;
+  }
+  .docs-pictures li,.docs-pictures1 li {
+    width: 250px;
+    height: 150px;
+    float: left;
+  }
+  .docs-pictures li img,.docs-pictures1 li img {
+    width: 250px;
+    height: 150px;
+  }
+  .docs-galley1 .viewer-button-close{
+    display: none;
+  }
+  </style>
+</head>
+<body>
+ <div class="container content">
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+
+        <ul id="lists" class="nav nav-list bs-docs-sidenav affix-top">
+          <!--<li>
+            <a href="#"><i class="icon-chevron-right"></i>meJS API索引</a>
+          </li>-->
+        </ul>
+
+      </div>
+      <div class="span9">
+        <section>
+          <h3 class="h-title">
+			  Menu
+			  <ul class="indexs">
+				<li>
+				  <a href="#explain">说明</a>
+				</li>
+				<li>
+				  <a href="#code">示例</a>
+				</li>
+			  </ul>
+		  </h3>
+		  <h4 class="h-title-4" id="explain">说明</h4>
+		  <p>progress控件主要用于展示项目进度</p>
+      <p>使用时请用 me.require 方法按需加载到页面</p>
+      <p></p>
+      <h4 class="h-title-4" id="explain">HTML</h4>
+      <p>进度条约定相关html结构，样式可以根据实际情况用css样式定义。</p>
+		  <pre>
+&lt;div class="me_progress" percent=100 radius="border-radius" move animation&gt; &lt;!--被渲染菜单class--&gt;
+&lt;/div&gt; 
+		  </pre>
+      <h4 class="h-title-4" id="explain">JS</h4>
+      <p>需要通过me.require导入menu组件js、css文件。具体见<a href="./require.html">me.require用法</a></p>
+		  <pre>
+me.require(['progress&css'], 'progress'); //加载progress.js、progress.css文件
+me.require.ready('progress',function(){
+  me.menu.render({
+          backgroundColor:"red",        //进度颜色
+          strokeWidth:"6",              //进度条高度
+          isShowText:true,              //是否显示文字
+          location:"right",             //文字显示位置
+          width:100,                    //进度宽度
+          sucBackgroundColor:"green"    //100%状态下显示的进度颜色
+          },
+          function(){},                 //回调函数，进度条加载完成后
+          2);                           //用到模板加载多条数据时，需要传几条数据
+});
+		  </pre>
+      <div data-wrap="layout">
+        <div data-item="col-6">
+          <h4 class="h-title-4" id="code">示例 type='line' 属性添加radius="border-radius"为圆角 percent=30百分比  进度条不运动 </h4>
+          <div class="me_progress" type="line" percent=30 radius="border-radius"></div>
+        </div>
+        <div data-item="col-6">
+          <h4 class="h-title-4" id="code">示例 type='line' 进度条运动 属性添加move加上运动 animation加上进度效果</h4>
+          <div class="me_progress" type="line" percent=60 radius="border-radius" move animation></div>
+        </div>
+        <div data-item="col-6">
+          <h4 class="h-title-4" id="code">示例 type='circle' 进度条运动</h4>
+          <div class="me_progress" type="circle" percent=60 move></div>
+        </div>
+        <div data-item="col-6">
+          <h4 class="h-title-4" id="code">示例 type='circle' 进度条运动并100变色</h4>
+          <div class="me_progress" type="circle" percent=100 radius="border-radius" move></div>
+        </div>
+      </div> 
+      <h3 id="parameter" style="padding-top: 40px;">
+            参数
+          </h3>
+          <table class="table table-bordered">
+            <thead>
+            <tr>
+              <td width="50">名称</td>
+              <td width="40">类型</td>
+              <td width="40">可选</td>
+              <td>默认值</td>
+              <td width="100">描述</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td width="50">o</td>
+              <td width="40">对象</td>
+              <td width="40">否</td>
+              <td><pre>
+parentBackgroundColor = o.parentBackgroundColor || "#eee", //背景色
+backgroundColor = o.backgroundColor || "red",     //前景色
+strokeWidth = o.strokeWidth || "6",      //高度
+width = o.width || 200,        //进度条宽度
+isShowText = o.isShowText ||　false, //是否显示文字描述
+text = o.text || percent+"%",       //文字描述 
+location = o.location ||　"inside", //文字描述的位置
+successText = o.successText || text;   //100%状态下的文字描述
+sucBackgroundColor = o.sucBackgroundColor || backgroundColor; //100%状态下的前景色   
+              </pre></td>
+              <td width="40">进度条的颜色，宽度，高度，是否显示文字，文字位置等</td>
+            </tr>
+            <tr>
+              <td width="50">callback</td>
+              <td width="40">方法</td>
+              <td width="40">是</td>
+              <td></td>
+              <td width="100">进度条加载完后执行</td>
+            </tr>
+            <tr>
+              <td width="50">l</td>
+              <td width="40">变量（数字）</td>
+              <td width="40">是</td>
+              <td></td>
+              <td width="100">
+                <p>如果是模板渲染加载时需要传条数</p>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+<script src="../api_files/prettify.js"></script></body>
+
+<script>
+    me.require(['progress&css'], function(){
+        me.progress({isShowText:true,
+        // text:"<img src='images/isPass_no_03.jpg'/>",
+        // successText:"<img src='images/isPass_ok_03.jpg'/>",
+        backgroundColor:"red",
+        strokeWidth:"6",
+        location:"right",
+        width:100,
+        sucBackgroundColor:"green"},function(){})
+    })
+</script>
+</html>

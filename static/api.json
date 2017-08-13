@@ -1,0 +1,108 @@
+{
+	"config":[
+		{
+			"name":"文件引用",	
+			"cls":"me-ion-a-document",			
+			"children":[
+				{
+					"name":"me.require",
+					"curIndex":"require",
+					"url":""
+				},
+				{
+					"name":"me.replaceTpl",
+					"curIndex":"replaceTpl",
+					"url":""
+				}
+			]
+		},
+		{
+			"name":"数据处理/存储",	
+			"cls" :"me-ion-wrench",
+			"children":[
+				{
+					"name":"me.url",
+					"curIndex":"url",
+					"url":""
+				},
+				{
+					"name":"me.str",
+					"curIndex":"string",
+					"url":""
+				},
+				{
+					"name":"me.validate",
+					"curIndex":"validate",
+					"url":""
+				},
+				{
+					"name":"me.dataStorage",
+					"curIndex":"dataStorage",
+					"url":""
+				}
+			]
+		},
+		{
+			"name":"Form Data",	
+			"cls" :"me-ion-o-shuffle-strong",			
+			"children":[
+				{
+					"name":"me.ajax",
+					"curIndex":"ajax",
+					"url":""
+				},
+				{
+					"name":"me.post_yb",
+					"curIndex":"post_yb",
+					"url":""
+				}
+				
+			]
+		},
+		{
+			"name":"api-component",	
+			"cls" :"me-ion-o-settings",
+			"children":[
+				{
+					"name":"me.errTips",					
+					"curIndex":"errTips",
+					"url":""
+				},
+				{
+					"name":"me.dialog",
+					"curIndex":"dialog",
+					"url":""
+				},
+				{
+					"name":"me.pages",
+					"curIndex":"pages",
+					"url":""
+				},
+				{
+					"name":"me.timeout",
+					"curIndex":"timeout",
+					"url":""
+				},
+				{
+					"name":"me.modal",
+					"curIndex":"modal",
+					"url":""
+				},
+				{
+					"name":"me.loading",
+					"curIndex":"loading",
+					"url":""
+				}
+				
+			]
+		},
+		{
+			"name":"me.browser",	
+			"cls" :"me-ion-social-chrome",
+			"children":[
+				
+			]
+		}
+	
+	]
+}

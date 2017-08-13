@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>me文档-组件--多选</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Generate your documentation.">
+  <script src="https://static.mejinrong.com/MeAssest/MeJS2.0/me.js"></script>  
+  
+  <script src="../api_files/bootstrap.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="../api_files/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../api_files/bootstrap-responsive.min.css">
+  <link rel="stylesheet" type="text/css" href="../api_files/base.css">
+  <link rel="stylesheet" type="text/css" href="https://static.mejinrong.com/MeAssest/MeJS2.0/me.css">
+  <!--<link rel="stylesheet" href="../../src/modules/multiSelect/index.css">-->
+  <style>
+	button{
+		display:block;
+		width:100px;
+		height:50px;
+		line-height:50px;
+		margin:60px 160px;
+	}
+	section{
+		padding-top:13px;
+	}
+	.h-title{border-bottom:1px solid #f1f1f1}
+	.h-title ul{float:right; font-size:16px;font-weight:100;list-style: none; padding-top:15px;}
+	.h-title ul li{float:left;margin:0 5px;padding-right:10px; border-right:1px solid #f1f1f1;}
+	.h-title-4{padding:20px 0 0 0;}
+	
+	#container{
+		width:200px;
+	}
+	.layout{
+		width:865px;
+		background:url(../images/layout.png) repeat-y;
+	}
+	[data-item^="col-"]{
+		background:rgba(0,160,233,.8);
+		font-size:14px;
+		color:#fff;
+		min-height:45px;
+		line-height:45px;
+		text-align:center;
+	}
+	[data-wrap="layout"]{
+		margin-bottom:20px;
+	}
+	.layoutBg{
+		background:rgba(255,255,255,.7);
+		color:#000;
+	}
+	b{
+	color:#ff0000; font-weight:900;
+	}
+	.codeBox{
+	background:none;
+	text-align:left;
+	}
+	.codeStyle{
+	padding-left:10px;background:none;
+	}
+	.codeStyle [data-item^="col-"]{
+	background:none; border:1px solid #ff6600;
+	}
+  </style>
+</head>
+<body>
+  <div class="container content">
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul id="lists" class="nav nav-list bs-docs-sidenav">
+        </ul>
+      </div>
+      <div class="span9">
+        <section>
+          <h3 class="h-title">
+			  多选
+			  <ul class="indexs">
+				<li>
+				  <a href="#explain">说明</a>
+				</li>
+				<li>
+				  <a href="#code">示例</a>
+				</li>
+				<li>
+				  <a href="#theme">主题</a>
+				</li>
+				<li>
+				  <a href="#API">API</a>
+				</li>
+			  </ul>
+		  </h3>
+		  <h4 class="h-title-4" id="explain">说明</h4>
+		  <p>多选</p>
+		  <p>使用时请用 <b>me.require</b> 方法按需加载到页面，（此组件需引入css）,并且额外要引入meScroll组件</p>
+		  <p>请注意：</p>
+		   
+			 <h5 style="padding:5px 10px;">HTML</h5>
+			 <div data-wrap="layout">
+				<div class="codeBox">
+					<pre>
+&lt;select name="" class="multiple"&gt;
+	&lt;option value="sex1" title = "1"&gt;option1&lt;/option&gt;
+	&lt;option value="sex2" title = "2"&gt;option2option2option2option2option2option2option2&lt;/option&gt;
+	&lt;option value="sex3" title = "3"&gt;option3&lt;/option&gt;
+	&lt;option value="sex4" title = "4"&gt;option4&lt;/option&gt;
+	&lt;option value="sex5" title = "5"&gt;option5&lt;/option&gt;
+	&lt;option value="sex6" title = "6"&gt;option6&lt;/option&gt;
+	&lt;option value="sex4" title = "4"&gt;option7&lt;/option&gt;
+	&lt;option value="sex5" title = "5"&gt;option8&lt;/option&gt;
+	&lt;option value="sex6" title = "6"&gt;option9&lt;/option&gt;
+&lt;/select&gt;
+					</pre>
+				</div>
+			</div>
+			 <h5 style="padding:5px 10px;">JS</h5>
+		   <div data-wrap="layout" style="margin-bottom:0">
+				<div style="width:870px;" class="codeBox">
+					<pre>
+me.multiSelect({
+      ele:'#multiple',
+      placeholder:'please',
+      getValue:function(data){
+          console.log(data)
+      },
+      item_choice_color:'pink'
+      
+  }) 
+					</pre>			
+				</div>
+				
+			</div>
+			<h4 class="h-title-4" id="code">示例</h4>
+			<select name="" class="date">
+				<option value="sex1" title = "1">周一</option>
+				<option value="sex2" title = "2">周二</option>
+				<option value="sex3" title = "3">周三</option>
+			</select> 
+			<select name="" class="multiple">
+              <option value="sex1" title = "1">option1</option>
+              <option value="sex2" title = "2">option2option2option2option2option2option2option2</option>
+              <option value="sex3" title = "3">option3</option>
+              <option value="sex4" title = "4">option4</option>
+              <option value="sex5" title = "5">option5</option>
+              <option value="sex6" title = "6">option6</option>
+              <option value="sex4" title = "4">option7</option>
+              <option value="sex5" title = "5">option8</option>
+              <option value="sex6" title = "6">option9</option>
+          </select> 
+			<h4 class="h-title-4" id="API">API</h4>
+			<p>多选框（注：若页面中多次调用本方法，需按照dom的书写select顺序来调用此方法，否则会影响渲染效果;）</p>			
+			<table class="table table-bordered">
+            <thead>
+            <tr>
+              <td width="180">名称</td>
+              <td>说明</td>
+              <td>使用示例</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td width="180">ele<font color="red">（必传参数）</font></td>
+              <td>需替换的select的id或者class</td>
+              <td>
+								<pre>me.multiSelect({<br>  ele:'#multiple'
+})</pre>
+							</td>
+					</tr>
+            <tr>
+              <td width="80">placeholder</td>
+              <td>提示信息</td>
+              <td><pre>me.multiSelect({<br>  ele:'#multiple',<br>  placeholder:'请选择'
+})</pre>
+			  		</td>
+            </tr>
+						<tr>
+              <td width="80">getValue</td>
+              <td>点击叉号、复选框、全选、反选，在input框中按退格键的回调函数，该方法返回值为数组类型，数组项为json格式，所选的值</td>
+              <td><pre>me.multiSelect({<br>  ele:'#multiple',<br>  placeholder:'请选择',<br>  getValue:function(data){<br>&nbsp;&nbsp;console.log(data)<br>&nbsp;}
+})</pre>
+			  			</td>
+            </tr>
+						<tr>
+              <td width="80">item_choice_color</td>
+              <td>复选框及单选按钮的颜色<br>(根据me组件库的checkbox和radio的颜色传参数，eg:'blue')</td>
+              <td><pre>me.multiSelect({<br>  ele:'#multiple',<br>  placeholder:'请选择',<br>  getValue:function(data){<br>&nbsp;&nbsp;console.log(data)<br>&nbsp;}
+&nbsp;item_choice_color:blue<br>})</pre>
+			  			</td>
+            </tr>
+						
+						<tr>
+              <td width="80">hover</td>
+              <td>鼠标经过下拉列表项时的样式设置(所传类型为对象格式)</td>
+              <td><pre>me.multiSelect({<br>  ele:'#multiple',<br>  placeholder:'请选择',<br>&nbsp;hover:{'background-color':'#a08ee0'},<br>&nbsp;getValue:function(data){<br>&nbsp;&nbsp;console.log(data)<br>&nbsp;},
+&nbsp;item_choice_color:blue<br>&nbsp;})</pre>
+			  			</td>
+            </tr>
+						<tr>
+              <td width="80">list_item_style</td>
+              <td>下拉列表项的样式设置(所传类型为对象格式)</td>
+              <td><pre>me.multiSelect({<br>  ele:'#multiple',<br>  placeholder:'请选择',<br>&nbsp;hover:{'background-color':'#a08ee0'},<br>&nbsp;getValue:function(data){<br>&nbsp;&nbsp;console.log(data)<br>&nbsp;},
+&nbsp;item_choice_color:blue,<br>&nbsp;list_item_style:{'font-size':'15px'})</pre>
+			  			</td>
+            </tr>
+						<tr>
+              <td width="80">menu</td>
+              <td>下拉列表框的样式设置(所传类型为对象格式)</td>
+              <td><pre>me.multiSelect({<br>  ele:'#multiple',<br>  placeholder:'请选择',<br>&nbsp;hover:{'background-color':'#a08ee0'},<br>&nbsp;getValue:function(data){<br>&nbsp;&nbsp;console.log(data)<br>&nbsp;},
+&nbsp;item_choice_color:blue,<br>&nbsp;list_item_style:{'font-size':'15px'},<br>&nbsp;menu:{'width':'200px'}})</pre>
+			  			</td>
+            </tr>
+						<tr>
+              <td width="80">input_style</td>
+              <td>输入框的样式设置(所传类型为对象格式)</td>
+              <td><pre>me.multiSelect({<br>  ele:'#multiple',<br>  placeholder:'请选择',<br>&nbsp;hover:{'background-color':'#a08ee0'},<br>&nbsp;getValue:function(data){<br>&nbsp;&nbsp;console.log(data)<br>&nbsp;},
+&nbsp;item_choice_color:blue,<br>&nbsp;list_item_style:{'font-size':'15px'},<br>&nbsp;menu:{'width':'200px'},<br>&nbsp;input_style:{'border':'1px solid red'}<br>})</pre>
+			  			</td>
+            </tr>
+            </tbody>
+          </table>
+        </section>
+
+      </div>
+    </div>
+  </div>
+<script src="../api_files/prettify.js"></script></body>
+</html>
+<!--<script src="../../src/modules/multiSelect/index.js"></script>-->
+<script>
+	me.require(['meScroll','multiSelect&css'], 'bundle');
+	me.require.ready('bundle',function(){
+		me.multiSelect({
+			ele:'.date',
+			placeholder:'请选择',
+			item_choice_color:'blue',
+			hover:{
+				'background-color':'#a08ee0',
+			},
+			list_item_style:{
+				'font-size':'15px'
+			},
+			menu:{
+				'width':'200px'
+			},
+			input_style:{
+				'border':'1px solid #ff4c4c',
+				'font-size':'14px',
+				'width':'220px',
+				'margin-right':'20px'
+			},
+			getValue:function(data){
+				console.log(data)
+			}
+		})
+		me.multiSelect({
+			ele:'#multiple',
+			placeholder:'please',
+			hover:{
+				'background-color':'#ccc',
+			},
+			getValue:function(data){
+					console.log(data)
+			},
+			list_item_style:{
+				'height':'50px',
+				'line-height':'40px',
+				'background-color':'#ddd'
+			},
+			item_choice_color:'pink'
+		})
+	})
+</script>
